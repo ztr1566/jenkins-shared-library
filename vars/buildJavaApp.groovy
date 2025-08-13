@@ -13,10 +13,10 @@ def call(Map config) {
             DOCKER_HUB_PASS = "${DOCKER_HUB_CREDENTIALS_PSW}"
 
             // Your Docker Hub username
-            DOCKER_HUB_REPO = "your-dockerhub-username" // <-- **مهم:** غير هذا لاسم مستخدم Docker Hub الخاص بك
+            DOCKER_HUB_REPO = "zizoo1566" // 
             
             // Your GitOps repository URL
-            GITOPS_REPO_URL = "https://github.com/your-github-username/my-java-app-config.git" // <-- **مهم:** غير هذا لرابط مستودع الـ config الخاص بك
+            GITOPS_REPO_URL = "https://github.com/ztr1566/my-java-app-config.git" //
             
             IMAGE_NAME = "${DOCKER_HUB_REPO}/java-app"
             IMAGE_TAG = "build-${BUILD_NUMBER}" // Create a unique tag for each build
@@ -74,7 +74,7 @@ def call(Map config) {
                             sh "git commit -m 'Update image to ${IMAGE_TAG}'"
                             
                             // Use the GitHub credentials to push the changes
-                            sh "git push https://${GITHUB_CREDENTIALS}@github.com/your-github-username/my-java-app-config.git HEAD:main" // <-- **مهم:** غير هذا لرابط مستودع الـ config الخاص بك
+                            sh "git push https://${GITHUB_CREDENTIALS}@github.com/ztr1566/my-java-app-config.git HEAD:main" //
                         }
                     }
                 }
