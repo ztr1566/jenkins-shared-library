@@ -42,7 +42,7 @@ def call(Map config) {
             stage('Build Docker Image') {
                 steps {
                     // Build a new Docker image with the unique tag
-                    sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+                    sh "docker build --no-cache -t ${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
             }
 
